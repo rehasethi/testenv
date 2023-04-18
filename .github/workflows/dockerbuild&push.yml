@@ -10,12 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Dev
     steps:
-      - name: Docker Build Tag Publish
-        uses: bitovi/github-actions-docker-publish@v1.0.7
-        with:
-          docker_username: ${{secrets.DOCKERHUBUSERNAME}}
-          docker_password: ${{secrets.DOCKERHUBPASSWORD}}
-          image_tag: fast_api-${GITHUB_SHA::7}
+      - name: docker login
+         echo "hello"
           
           
           
