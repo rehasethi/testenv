@@ -13,7 +13,7 @@ jobs:
 #       - name: docker installation 
 #         run: curl -fsSL https://get.docker.com | sh 
       - name: docker login 
-        run: ls 
+        run: ls && pwd && ls -lrt
 #         run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
 #       - name: docker build 
 #         run: docker build . -t fast_api:${GITHUB_SHA::7}
