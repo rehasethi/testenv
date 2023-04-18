@@ -18,6 +18,8 @@ jobs:
         run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
       - name: docker build 
         run: cd testenv && docker build . -t fast_api:${GITHUB_SHA::7}
+      - name: docker tag & push  
+        run: docker tag docker.io/library/fast_api:${GITHUB_SHA::7} && docker push docker.io/library/fast_api:${GITHUB_SHA::7}
         
           
           
