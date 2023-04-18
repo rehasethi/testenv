@@ -15,7 +15,7 @@ jobs:
         with:
           docker_username: ${{secrets.DOCKERHUBUSERNAME}}
           docker_password: ${{secrets.DOCKERHUBPASSWORD}}
-          image_tag: fast_api
+          image_tag: fast_api-${GITHUB_SHA::7}
           
           
           
