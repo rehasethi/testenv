@@ -19,7 +19,7 @@ jobs:
       - name: docker build 
         run: cd testenv && docker build . -t fast_api:${GITHUB_SHA::7}
       - name: docker tag & push  
-        run: docker tag docker.io/library/fast_api:${GITHUB_SHA::7} && docker push docker.io/library/fast_api:${GITHUB_SHA::7}
+        run: docker tag fast_api:${GITHUB_SHA::7} docker.io/library/fast_api:${GITHUB_SHA::7} && docker push docker.io/library/fast_api:${GITHUB_SHA::7}
         
           
           
