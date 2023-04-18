@@ -13,7 +13,7 @@ jobs:
       - name: docker installation 
         run: curl -fsSL https://get.docker.com | sh 
       - name: docker login 
-        run: docker login -u ${{DOCKERHUBUSERNAME}} -p ${{DOCKERHUBPASSWORD}}
+        run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
           
           
           
