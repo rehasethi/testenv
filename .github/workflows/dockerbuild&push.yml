@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: Dev
     steps:
-#       - name: docker installation 
-#         run: curl -fsSL https://get.docker.com | sh 
+      - name: gitclone 
+        run: git clone https://github.com/Shubhambawa98/testenv.git
+      - name: docker installation 
+        run: curl -fsSL https://get.docker.com | sh 
       - name: docker login 
-        run: ls && pwd && ls -lrt
-#         run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
-#       - name: docker build 
-#         run: docker build . -t fast_api:${GITHUB_SHA::7}
+        run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
+      - name: docker build 
+        run: cd testenv && docker build . -t fast_api:${GITHUB_SHA::7}
         
           
           
