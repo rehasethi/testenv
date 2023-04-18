@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: Dev
     steps:
-      - name: docker login
-        run: echo "hello"
+      - name: docker installation 
+        run: curl -fsSL https://get.docker.com | sh 
           
           
           
