@@ -10,12 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: Dev
     steps:
-      - name: docker installation 
-        run: curl -fsSL https://get.docker.com | sh 
+#       - name: docker installation 
+#         run: curl -fsSL https://get.docker.com | sh 
       - name: docker login 
-        run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
-      - name: docker build 
-        run: docker build . -t fast_api:${GITHUB_SHA::7}
+        run: ls 
+#         run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
+#       - name: docker build 
+#         run: docker build . -t fast_api:${GITHUB_SHA::7}
         
           
           
