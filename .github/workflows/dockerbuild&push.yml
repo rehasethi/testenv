@@ -20,6 +20,45 @@ jobs:
         run: cd testenv && docker build . -t fast_api:${GITHUB_SHA::7}
       - name: docker tag & push  
         run: docker tag fast_api:${GITHUB_SHA::7} shubhambawa98/testlkm:${GITHUB_SHA::7} && docker push shubhambawa98/testlkm:${GITHUB_SHA::7}
+      - name: GitHub Script
+        uses: actions/github-script@v6.4.1
+        with:
+          github-token: ${{ secrets.TOKEN_GITHUB }}
+          script: |
+            const {data} = await octokit.actions.getWorkflow({
+             owner: 'shubhambawa98',
+             repo: 'https://github.com/Shubhambawa98/Fastapi_container_deploy.git',
+             workflow_id: 
+             
+            });
+      
+       
+       
+       
+       
+#       - uses: actions/github-script@v4
+#   with:
+#     github-token: ${{ secrets.GITHUB_TOKEN }}
+#     script: |
+#       const { data } = await octokit.actions.getWorkflow({
+#         owner: '<owner>',
+#         repo: '<repo>',
+#         workflow_id: <workflow_id>
+#       });
+
+#       const { url } = data;
+
+#       console.log(`Workflow URL: ${url}`);
+
+#       const { data: { id } } = await octokit.request('POST ' + url, {
+#         ref: '<ref>',
+#         inputs: {
+#           arg1: 'value1',
+#           arg2: 'value2'
+#         }
+#       });
+
+#       console.log(`Workflow run ID: ${id}`);
         
           
           
