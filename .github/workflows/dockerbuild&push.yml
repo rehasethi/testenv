@@ -31,7 +31,8 @@ jobs:
           username: dockerpoc
           password: ${{ secrets.SERVERPASSWORD }}
           port: 22
-          script: sudo docker run -d -P testlkm:latest 
+          script: | 
+             sudo docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
       
       
     
