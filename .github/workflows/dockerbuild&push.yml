@@ -31,7 +31,7 @@ jobs:
           username: dockerpoc
           password: ${{ secrets.SERVERPASSWORD }}
           port: 22
-          script: whoami
+          script: docker run -d -P testlkm:${GITHUB_SHA::7}  
       
       
     
