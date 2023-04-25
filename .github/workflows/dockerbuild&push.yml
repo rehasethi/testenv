@@ -18,11 +18,11 @@ jobs:
       - name: docker login 
         run: docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
       - name: docker build 
-        run: cd testenv && docker build . -t fast_api:${GITHUB_SHA::7}
+        run: cd testenv && docker build . -t fast_api:latest
       - name: test
         run: echo "hello"
       - name: docker tag & push  
-        run: docker tag fast_api:${GITHUB_SHA::7} shubhambawa98/testlkm:${GITHUB_SHA::7} && docker push shubhambawa98/testlkm:${GITHUB_SHA::7}
+        run: docker tag fast_api:latest shubhambawa98/testlkm:latest && docker push shubhambawa98/testlkm:latest
         
       - name: login Target Server
         uses: appleboy/ssh-action@v0.1.10
@@ -31,7 +31,7 @@ jobs:
           username: dockerpoc
           password: ${{ secrets.SERVERPASSWORD }}
           port: 22
-          script: docker run -d -P testlkm:${GITHUB_SHA::7}  
+          script: sudo docker run -d -P testlkm:latest 
       
       
     
