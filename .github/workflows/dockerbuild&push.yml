@@ -24,16 +24,17 @@ jobs:
       - name: docker tag & push  
         run: docker tag fast_api:latest shubhambawa98/testlkm:latest && docker push shubhambawa98/testlkm:latest
         
-#       - name: login Target Server
-#         uses: appleboy/ssh-action@v0.1.10
-#         with:
-#           host: 40.71.56.99
-#           username: dockerpoc
-#           password: ${{ secrets.SERVERPASSWORD }}
-#           port: 22
-#           script: | 
-#              sudo docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
-#              sudo docker pull 
+      - name: login Target Server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: 40.71.56.99
+          username: dockerpoc
+          password: ${{ secrets.SERVERPASSWORD }}
+          port: 22
+          script: | 
+             sudo docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
+             sudo docker pull testlkm:latest
+             sudo docker run -d -P testlkm:latest
       
       
     
