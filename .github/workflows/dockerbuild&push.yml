@@ -34,7 +34,7 @@ jobs:
           script: | 
              sudo docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
              sudo docker pull testlkm:latest
-             sudo docker run -d -P testlkm:latest
+             sudo docker run -d -P shubhambawa98/testlkm
       
       
     
