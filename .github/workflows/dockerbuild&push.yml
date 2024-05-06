@@ -36,7 +36,7 @@ jobs:
              sleep 60
              sudo docker login -u ${{secrets.DOCKERHUBUSERNAME}} -p ${{secrets.DOCKERHUBPASSWORD}}
              sudo docker pull shubhambawa98/testlkm:latest
-             sudo docker run -d -P shubhambawa98/testlkm:latest
+             sudo docker run -d -P shubhambawa98/testlkm:latest 
       
       
       
