@@ -24,6 +24,9 @@ jobs:
       - name: docker tag & push  
         run: docker tag fast_api:satyam shubhambawa98/testlkm:satyam && docker push shubhambawa98/testlkm:satyam
         
+  
+      
+      
       # - name: login Target Server
       #   uses: appleboy/ssh-action@v0.1.10
       #   with:
